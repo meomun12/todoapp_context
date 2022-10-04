@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import TodoProvider from "./context/todoContext";
 import ThemeProvider from "./context/themeContext";
 import Todos from "./containers/Todos";
