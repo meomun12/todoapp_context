@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, createContext } from "react";
 import { todoContextType, ITodo } from "../types/todo";
-export const TodoContext = React.createContext<todoContextType | null>(null);
+export const TodoContext = createContext<todoContextType | null>(null);
 
 export interface ReactNode extends React.PropsWithChildren {}
 const TodoProvider: React.FC<ReactNode> = ({ children }) => {
