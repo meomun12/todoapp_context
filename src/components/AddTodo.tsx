@@ -1,10 +1,10 @@
-import * as React from "react";
+import React, { useState, useContext } from "react";
 import { TodoContext } from "../context/todoContext";
 import { todoContextType, ITodo } from "../types/todo";
 
 const AddTodo: React.FC = () => {
-  const { saveTodo } = React.useContext(TodoContext) as todoContextType;
-  const [formData, setFormData] = React.useState<ITodo | {}>();
+  const { saveTodo } = useContext(TodoContext) as todoContextType;
+  const [formData, setFormData] = useState<ITodo | {}>();
 
   const handleForm = (e: React.FormEvent<HTMLInputElement>): void => {
     setFormData({
