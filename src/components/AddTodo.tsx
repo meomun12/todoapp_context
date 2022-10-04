@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, FormEvent } from "react";
 import { TodoContext } from "../context/todoContext";
 import { todoContextType, ITodo } from "../types/todo";
 
@@ -6,14 +6,14 @@ const AddTodo: React.FC = () => {
   const { saveTodo } = useContext(TodoContext) as todoContextType;
   const [formData, setFormData] = useState<ITodo | {}>();
 
-  const handleForm = (e: React.FormEvent<HTMLInputElement>): void => {
+  const handleForm = (e: FormEvent<HTMLInputElement>): void => {
     setFormData({
       ...formData,
       [e.currentTarget.id]: e.currentTarget.value,
     });
   };
 
-  const handleSaveTodo = (e: React.FormEvent, formData: ITodo | any) => {
+  const handleSaveTodo = (e: FormEvent, formData: ITodo | any) => {
     e.preventDefault();
     saveTodo(formData);
   };
