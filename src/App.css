@@ -12,22 +12,22 @@
   margin: 1rem 0;
   color: orange;
 }
-.Card {
+.card {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background: orange;
   padding: 0.5rem 1rem;
 }
-.Card:not(:last-child) {
+.card:not(:last-child) {
   border-bottom: 1px solid, orange;
 }
-.Card--text h1 {
+.card--text h1 {
   color: #0970b4;
   text-transform: capitalize;
 }
 
-.Card--button {
+.card--button {
   padding: 0.4rem 1rem;
   border-radius: 20px;
   cursor: pointer;
@@ -36,21 +36,21 @@
   color: orange;
   margin-right: 1rem;
 }
-.Form {
+.form {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding: 0.5rem;
   background: orange;
   margin-bottom: 1rem;
 }
 
-.Form > div {
+.form > div {
   display: flex;
-  justify-content: center;
+  justify-content: right;
   align-items: center;
 }
-.Form input {
+.form input {
   background: green;
   padding: 0.5rem 1rem;
   border: 1px solid #0970b4;
@@ -60,7 +60,7 @@
   outline: none;
 }
 
-.Form button {
+.form button {
   background: #099dff;
   color: #fff;
   padding: 0.5rem 1rem;

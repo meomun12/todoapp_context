@@ -1,9 +1,10 @@
-import React, { useState, createContext } from "react";
+import React, { useState, createContext, memo } from "react";
+import { idText } from "typescript";
 import { todoContextType, ITodo } from "../types/todo";
 export const TodoContext = createContext<todoContextType | null>(null);
 
 export interface ReactNode extends React.PropsWithChildren {}
-const TodoProvider: React.FC<ReactNode> = ({ children }) => {
+const TodoProvider: React.FC<ReactNode> = memo(({ children }) => {
   const [todos, setTodos] = useState<ITodo[]>([
     {
       id: 1,
@@ -18,7 +19,6 @@ const TodoProvider: React.FC<ReactNode> = ({ children }) => {
       status: false,
     },
   ]);
-
   const saveTodo = (todo: ITodo) => {
     const newTodo: ITodo = {
       id: Math.random(),
@@ -27,6 +27,7 @@ const TodoProvider: React.FC<ReactNode> = ({ children }) => {
       status: false,
     };
     setTodos([...todos, newTodo]);
+    console.log("rerun");
   };
 
   const updateTodo = (id: number) => {
@@ -43,6 +44,6 @@ const TodoProvider: React.FC<ReactNode> = ({ children }) => {
       {children}
     </TodoContext.Provider>
   );
-};
+});
 
-export default TodoProvider;
+export default memo(TodoProvider);

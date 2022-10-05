@@ -1,9 +1,9 @@
-import React, { useContext } from "react";
+import React, { useContext, memo } from "react";
 import { todoContextType, ITodo } from "../types/todo";
 import { TodoContext } from "../context/todoContext";
 import Todo from "../components/Todo";
 
-const Todos = () => {
+const Todos = memo(() => {
   const { todos, updateTodo } = useContext(TodoContext) as todoContextType;
   return (
     <>
@@ -12,6 +12,6 @@ const Todos = () => {
       ))}
     </>
   );
-};
+});
 
-export default Todos;
+export default memo(Todos);

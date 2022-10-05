@@ -1,8 +1,8 @@
-import React, { useState, useContext, FormEvent } from "react";
+import React, { useState, useContext, FormEvent, memo } from "react";
 import { TodoContext } from "../context/todoContext";
 import { todoContextType, ITodo } from "../types/todo";
 
-const AddTodo: React.FC = () => {
+const AddTodo: React.FC = memo(() => {
   const { saveTodo } = useContext(TodoContext) as todoContextType;
   const [formData, setFormData] = useState<ITodo | {}>();
 
@@ -19,7 +19,7 @@ const AddTodo: React.FC = () => {
   };
 
   return (
-    <form className="Form" onSubmit={(e) => handleSaveTodo(e, formData)}>
+    <form className="form" onSubmit={(e) => handleSaveTodo(e, formData)}>
       <div>
         <div>
           <label htmlFor="name">Title</label>
@@ -33,6 +33,6 @@ const AddTodo: React.FC = () => {
       <button disabled={formData === undefined ? true : false}>Add Todo</button>
     </form>
   );
-};
+});
 
-export default AddTodo;
+export default memo(AddTodo);
