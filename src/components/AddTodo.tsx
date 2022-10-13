@@ -25,10 +25,6 @@ const AddTodo: React.FC = memo(() => {
           <label htmlFor="name">Title</label>
           <input onChange={handleForm} type="text" id="title" />
         </div>
-        <div>
-          <label htmlFor="description">Description</label>
-          <input onChange={handleForm} type="text" id="description" />
-        </div>
       </div>
       <button disabled={formData === undefined ? true : false}>Add Todo</button>
     </form>
